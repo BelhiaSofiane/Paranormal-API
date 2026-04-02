@@ -12,13 +12,3 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-/*
-Challenge: 
-1. Initialise a nodejs project:
-	Name: “from-the-other-side”.
-    Description: “A platform for sharing ghostly encounters”.
-
-2. Enable modular js (in package.json).
-
-hint.md for help
-*/

@@ -1,14 +1,14 @@
-import path from 'node:path';
-import fs from 'node:fs/promises';
-import { sendResponse } from './sendResponse.js';
+import path from "node:path";
+import fs from "node:fs/promises";
+import { sendResponse } from "./sendResponse.js";
 
-export async function serveStatic (req, res, baseDir) {
-
-    const filePath = path.join(baseDir, 'public', 'index.html');
-    try {
-        const content = await fs.readFile(filePath);
-        sendResponse (res, 200, 'text/html', content);
-    } catch (err) {
-        console.error('Error reading file', err);
-    }
+export async function serveStatic(req, res, baseDir) {
+  const filePath = path.join(baseDir, "public", "index.html");
+  try {
+    const content = await fs.readFile(filePath);
+    sendResponse(res, 200, "text/html", content);
+    console.log("Serving file:", filePath);
+  } catch (err) {
+    console.error("Error reading file", err);
+  }
 }
